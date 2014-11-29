@@ -1,15 +1,10 @@
 package main
 
 import (
-"fmt"
-"net/http"
+	"net/http"
 )
 
-func myhandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "はろー、%s", r.URL.Path[1:])
-}
-
 func main() {
-	http.HandleFunc("/", myhandler)
+	http.Handle("/", http.FileServer(http.Dir("./low.m3u8")))
 	http.ListenAndServe(":8080", nil)
 }
