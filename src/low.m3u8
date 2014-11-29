@@ -4,11 +4,11 @@
 #EXT-X-ALLOW-CACHE:YES
 #EXT-X-TARGETDURATION:14
 #EXTINF:14.000000,
-kinmoza_000.ts
+kinmoza/kinmoza_000.ts
 #EXTINF:2.300000,
-kinmoza_001.ts
+kinmoza/kinmoza_001.ts
 #EXTINF:8.633333,
-kinmoza_002.ts
+kinmoza/kinmoza_002.ts
 #EXTINF:7.800000,
-kinmoza_003.ts
+kinmoza/kinmoza_003.ts
 #EXT-X-ENDLIST
