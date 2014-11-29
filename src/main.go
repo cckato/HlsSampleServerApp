@@ -4,7 +4,8 @@ import (
 	"net/http"
 )
 
+
 func main() {
-	http.Handle("/", http.FileServer(http.Dir("./low.m3u8")))
+	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./"))))
 	http.ListenAndServe(":8080", nil)
 }
