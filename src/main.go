@@ -44,6 +44,7 @@ func movieHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if utils.IsTsFile(str) && delete_flag {
+			index--
 			delete_flag = false
 			continue
 		}
