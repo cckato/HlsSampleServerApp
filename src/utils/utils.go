@@ -11,7 +11,7 @@ func SayHello() {
 	fmt.Println("はろー")
 }
 
-func GetRequestIndex (query string) int {
+func GetRequestIndex(query string) int {
 	re, _ := regexp.Compile("index=([0-9]+)")
 	result := re.FindSubmatch([]byte(query))
 

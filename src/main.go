@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 	"net/http"
-	"utils"
 	"os"
 	"io"
 	"bufio"
+	"./utils"
 )
 
 func movieHandler(w http.ResponseWriter, r *http.Request) {
@@ -58,10 +58,9 @@ func hogeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-
-		http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./"))))
-		http.HandleFunc("/movie.m3u8", movieHandler)
-		http.ListenAndServe(":8080", nil)
+	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./"))))
+	http.HandleFunc("/movie.m3u8", movieHandler)
+	http.ListenAndServe(":8080", nil)
 	utils.SayHello()
 	readFile("src/low.m3u8")
 }
