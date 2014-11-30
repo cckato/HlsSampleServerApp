@@ -48,6 +48,7 @@ func movieHandler(w http.ResponseWriter, r *http.Request) {
 			delete_flag = false
 			continue
 		}
+
 		fmt.Fprintln(w, str)
 	}
 }
@@ -61,8 +62,8 @@ func hogeHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.Handle("/", http.StripPrefix("/", http.FileServer(http.Dir("./"))))
 	http.HandleFunc("/movie.m3u8", movieHandler)
+	http.HandleFunc("/hoge/", hogeHandler)
 	http.ListenAndServe(":8080", nil)
-	utils.SayHello()
 	readFile("src/low.m3u8")
 }
 

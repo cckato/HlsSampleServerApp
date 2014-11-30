@@ -1,15 +1,10 @@
 package utils
 
 import (
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
 )
-
-func SayHello() {
-	fmt.Println("はろー")
-}
 
 func GetRequestIndex(query string) int {
 	re, _ := regexp.Compile("index=([0-9]+)")
